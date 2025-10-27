@@ -1,0 +1,15 @@
+.gradle/
+build/
+*/build/
+
+# Local Configuration
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.hprof
+
+# Logs
+*.log
+

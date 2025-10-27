@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Aplicatie DAM</string>
+    <string name="despre">Despre</string>
+    <string name="adauga_eveniment">Adauga eveniment</string>
+    <string name="despre_aplicatie">Despre aplicatie</string>
+    <string name="main_activity">Evenimentele mele</string>
+    <string name="label_ora">Ora</string>
+    <string name="label_data">Data</string>
+    <string name="label_name">Name</string>
+    <string name="label_loc">Locul desfasurarii</string>
+    <string name="label_denumire">Denumire</string>
+    <string name="label_categorie">Categorie</string>
+    <string name="label_descriere">Descrieti evenimentul</string>
+    <string name="buton_adauga">Adauga</string>
+
+</resources>
