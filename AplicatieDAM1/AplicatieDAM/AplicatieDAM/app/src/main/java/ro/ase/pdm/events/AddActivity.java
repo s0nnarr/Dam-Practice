@@ -38,7 +38,7 @@ public class AddActivity extends AppCompatActivity {
 //            editTextNume.getText()
 //            spinnerCategorie.
             Toast.makeText(this, "A fost adaugat un nou eveniment", Toast.LENGTH_SHORT).show();
-
+            // Tema: De instantiat obiectul Eveniment cu datele din AddActivity.
             finish();
         });
 
