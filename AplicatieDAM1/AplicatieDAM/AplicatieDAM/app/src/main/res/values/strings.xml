@@ -13,4 +13,12 @@
     <string name="label_descriere">Descrieti evenimentul</string>
     <string name="buton_adauga">Adauga</string>
 
+
+    <string-array name="categorii">
+        <item>Conferinta</item>
+        <item>Curs</item>
+        <item>Targ de joburi</item>
+        <item>Alta categorie</item>
+    </string-array>
+
 </resources>

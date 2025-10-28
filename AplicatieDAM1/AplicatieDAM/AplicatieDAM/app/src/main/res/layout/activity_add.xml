@@ -52,7 +52,7 @@
         android:id="@+id/spinnerTip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="150dp" />
 
     <TextView
@@ -100,30 +100,21 @@
         android:layout_width="346dp"
         android:layout_height="54dp"
         android:layout_marginTop="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextLocul"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/label_loc" />
+        <EditText
+            android:id="@+id/editTextDescriere"
+            android:layout_width="346dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/label_descriere"
+            android:inputType="textMultiLine" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <EditText
-        android:id="@+id/editTextDescriere"
-        android:layout_width="346dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/label_descriere"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <Button
         android:id="@+id/buttonSalveaza"
@@ -134,5 +125,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextLocul"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/label_loc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="472dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
