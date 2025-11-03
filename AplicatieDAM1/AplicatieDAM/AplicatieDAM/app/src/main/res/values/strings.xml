@@ -12,6 +12,12 @@
     <string name="label_categorie">Categorie</string>
     <string name="label_descriere">Descrieti evenimentul</string>
     <string name="buton_adauga">Adauga</string>
-
+    <string-array name="categorii">
+        <item>Conference</item>
+        <item>Workshop</item>
+        <item>Concert</item>
+        <item>Sports</item>
+        <item>Networking</item>
+    </string-array>
 
 </resources>
