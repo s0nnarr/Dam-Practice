@@ -18,8 +18,9 @@ public class AddActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add);
 
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar); // Selecting the toolbar;
         setSupportActionBar(toolbar);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -27,4 +28,5 @@ public class AddActivity extends AppCompatActivity {
             return insets;
         });
     }
+
 }
