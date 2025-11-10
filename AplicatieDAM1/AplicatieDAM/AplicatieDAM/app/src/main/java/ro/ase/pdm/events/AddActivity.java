@@ -2,6 +2,7 @@ package ro.ase.pdm.events;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.Random;
+
+import ro.ase.pdm.events.model.Eveniment;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -106,9 +109,13 @@ public class AddActivity extends AppCompatActivity {
                 descriere
                 );
 
+        Log.d("AddActivity", "S-a salvat evenimentul " + e);
+        setResult(RESULT_OK, new Intent().putExtra("TRANZACTIE", e));
+
         Intent intent = new Intent(AddActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
+
 
 }

@@ -1,14 +1,15 @@
-package ro.ase.pdm.events;
+package ro.ase.pdm.events.model;
 
-import java.time.LocalTime;
+import java.io.Serializable;
 
-public class Eveniment {
+public class Eveniment implements Serializable {
     private int _id;
     private String categorie;
     private String data;
     private String ora;
     private String locatia;
     private String descriere;
+    private String denumire;
 
     public void setData(String data) {
         this.data = data;
@@ -38,6 +39,7 @@ public class Eveniment {
                 "_id=" + _id +
                 ", categorie='" + categorie + '\'' +
                 ", data=" + data +
+                ", denumire='" + denumire + '\'' +
                 ", locatia='" + locatia + '\'' +
                 ", descriere='" + descriere + '\'' +
                 '}';
@@ -77,6 +79,13 @@ public class Eveniment {
 
     public void setLocatia(String locatia) {
         this.locatia = locatia;
+    }
+
+    public void setDenumire(String denumire) {
+        this.denumire = denumire;
+    }
+    public String getDenumire() {
+        return denumire;
     }
 
 }

@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -18,6 +18,11 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ro.ase.pdm.events.model.Eveniment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,19 +33,25 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("Evenimente","S-a apelat metoda onCreate()");
 
-
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        /* Toolbar is already hooked up */
         setSupportActionBar(toolbar);
 
         FloatingActionButton button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,AddActivity.class);
-                startActivity(intent);
-            }
+        button.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AddActivity.class);
+            startActivity(intent);
         });
+
+        // --- Start of new code ---
+        ListView lvEvenimente = findViewById(R.id.lvEvenimente);
+
+        List<Eveniment> evenimente = new ArrayList<>();
+        evenimente.add(new Eveniment(1, "Conference", "2025-10-20", "10:00", "Sala Palatului", "O conferinta despre programare."));
+        evenimente.add(new Eveniment(2, "Workshop", "2025-10-21", "14:00", "Impact Hub", "Workshop de design."));
+
+        AdaptorEvenimente adapter = new AdaptorEvenimente(this, evenimente);
+        lvEvenimente.setAdapter(adapter);
+        // --- End of new code ---
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -48,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,10 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if(item.getItemId()== R.id.action_despre)
-        {
-            Intent intent = new Intent(this,DespreActivity.class);
+        if (item.getItemId() == R.id.action_despre) {
+            Intent intent = new Intent(this, DespreActivity.class);
             startActivity(intent);
             return true;
         }
