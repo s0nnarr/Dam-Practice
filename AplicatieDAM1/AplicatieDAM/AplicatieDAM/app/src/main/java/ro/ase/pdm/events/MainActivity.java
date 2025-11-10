@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // --- Start of new code ---
         ListView lvEvenimente = findViewById(R.id.lvEvenimente);
 
         List<Eveniment> evenimente = new ArrayList<>();
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         AdaptorEvenimente adapter = new AdaptorEvenimente(this, evenimente);
         lvEvenimente.setAdapter(adapter);
-        // --- End of new code ---
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
